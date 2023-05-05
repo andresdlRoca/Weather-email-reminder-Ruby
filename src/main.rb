@@ -1,8 +1,7 @@
-include api_weather
+require 'dotenv/load'
+require_relative 'api'
 
-def hello_world(name)
+city = "Guatemala"
+api_key = ENV['OPENWEATHER_API_KEY']
 
-    puts "Hello how are you #{name}?"
-end
-
-hello_world("Andres")
+print get_geocoding_for_city(city, api_key)
